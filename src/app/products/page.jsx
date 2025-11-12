@@ -1,10 +1,12 @@
 // src/app/products/page.jsx
 "use client";
+
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Products } from "../../Data/Product";
 import styles from "./page.module.css";
 
-export default function ProductsPage() {
+function ProductsContent() {
   const searchParams = useSearchParams();
   const group = searchParams.get("group");
 
@@ -14,10 +16,8 @@ export default function ProductsPage() {
   if (group === "3") visibleProducts = Products.slice(4, 6);
 
   return (
-    <>
     <div className="p-4">
       <h1 className="text-xl font-bold mb-4">Products - Group {group}</h1>
-
       <ul className="space-y-2">
         {visibleProducts.map((item) => (
           <li
@@ -30,6 +30,13 @@ export default function ProductsPage() {
         ))}
       </ul>
     </div>
-    </>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsContent />
+    </Suspense>
   );
 }
