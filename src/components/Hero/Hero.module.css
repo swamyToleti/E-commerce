@@ -1,0 +1,28 @@
+.container {
+    padding: clamp(40px, 6vw, 100px);
+    display: flex;
+    justify-content: space-between;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+     margin-top: clamp(50px, 6vw, 110px);
+     
+}
+.text h2{
+    font-family: 'IM_Fell_English_SC';
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 5vw;
+    letter-spacing: 1.5px;
+} 
+.text h1 {
+    font-family: 'IM_Fell_English_SC';
+    font-size: clamp(30px, 5vw, 50px);
+    font-weight: bold;
+}
+.image img {
+    width: 40vw;
+    height: auto;
+    margin-top: -4vw;
+}
