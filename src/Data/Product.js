@@ -1,4 +1,4 @@
-'use client' ;
+
 export const Products = [
     {
         id:1,

@@ -1,3 +1,4 @@
+'use client' ;
 import { CartProvider } from "../context/Cartcontext";
 
 export default function RootLayout({children}) {
